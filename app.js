@@ -6,15 +6,15 @@ var morgan = require("morgan");
 var bodyParser = require("body-parser");
 var path = require("path");
 var Promise = require("bluebird");
-var Port = 3001;
+var Port = 3000;
 var forceReset = true;
 
-//OPTIONAL SWIG TEMPLATE
-/*var swig = require("swig");
+//HATE SWIG BUT WILL USE FOR NOW
+var swig = require("swig");
 app.engine("html", swig.renderFile);
 app.set('view engine', 'html');
 app.set('views', __dirname + "/views");
-swig.setDefaults({cache: false});*/
+swig.setDefaults({cache: false});
 
 app.use(morgan('dev'));
 
@@ -50,6 +50,5 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   console.error(err);
-  res.redirect(__dirname + "/views/error.html");
-  //res.render("...", {});
+  res.render("error", {});
 });

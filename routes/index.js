@@ -5,7 +5,7 @@ var path = require("path");
 var Promise = require('bluebird');
 
 router.get('/', function(req, res) {
-
+	res.render("index", {});
 })
 
 module.exports = router;

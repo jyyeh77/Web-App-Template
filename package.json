@@ -6,7 +6,7 @@
   "scripts": {
     "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon -e html,css,js app"
   },
   "keywords": [
     "Template"
@@ -21,6 +21,7 @@
     "node-sass": "^3.8.0",
     "pg": "^6.1.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^3.24.0"
+    "sequelize": "^3.24.0",
+    "swig": "^1.4.2"
   }
 }
